@@ -1,0 +1,58 @@
+package com.generation.blogpessoal.model;
+
+import java.time.LocalDateTime;
+import org.hibernate.annotations.UpdateTimestamp;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+@Entity // Informa que é uma entidade
+@Table(name = "tb_postagens") // Semelhante ao CREATE TABLE tb_postagens
+public class Postagem {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Semelhante ao AUTO_INCREMENT
+	private Long id; 
+	
+	@Column(length = 100)
+	@NotBlank(message = "O Atributo título é obrigatorio") // // Não deixa que o campo fique em branco e exibe uma mensagem caso o usuario não digite tal informação
+	@Size(min = 5, max = 100, message="O atributo título deve conter no mínimo 5 e no maximo 100 caracteres!")
+	private String titulo;
+	
+	@Column(length = 1000)
+	@NotBlank(message = "O Atributo texto é obrigatorio") // Não deixa que o campo fique em branco e exibe uma mensagem caso o usuario não digite tal informação
+	@Size(min = 10, max = 1000, message="O atributo título deve conter no mínimo 10 e no maximo 1000 caracteres!")
+	private String texto;
+	
+	@UpdateTimestamp // Toda vez que atualizar uma postagem, essa anotação atualiza automaticamente a data e hora.
+	private LocalDateTime data;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String getTexto() {
+		return texto;
+	}
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+	public LocalDateTime getData() {
+		return data;
+	}
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}	
+}
