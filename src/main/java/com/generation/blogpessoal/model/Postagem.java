@@ -1,12 +1,17 @@
 package com.generation.blogpessoal.model;
 
 import java.time.LocalDateTime;
+
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -31,6 +36,10 @@ public class Postagem {
 	@UpdateTimestamp // Toda vez que atualizar uma postagem, essa anotação atualiza automaticamente a data e hora.
 	private LocalDateTime data;
 	
+	@ManyToOne // só é preciso indicar onde será armazenada a FK, que no caso, será em Tema.
+	@JsonIgnoreProperties("postagem")// serve para ignorar o objeto postagem, para evitar o loop infinito
+	private Tema tema;
+
 	public Long getId() {
 		return id;
 	}
@@ -55,4 +64,10 @@ public class Postagem {
 	public void setData(LocalDateTime data) {
 		this.data = data;
 	}	
+	public Tema getTema() {
+		return tema;
+	}
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
 }

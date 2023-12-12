@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+
 import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
+
 import jakarta.validation.Valid;
 
 @RestController
@@ -27,6 +30,9 @@ import jakarta.validation.Valid;
 public class PostagemController {
 	@Autowired
 	private PostagemRepository postagemRepository;
+	
+	@Autowired
+	private TemaRepository temaRepository;
 	
 	@GetMapping
 	public ResponseEntity <List<Postagem>> getAll(){
@@ -49,16 +55,23 @@ public class PostagemController {
 	
 	@PostMapping
 	public ResponseEntity<Postagem> post (@Valid @RequestBody Postagem postagem){
-		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(postagemRepository.save(postagem)); 
-		// INSERT INTO tb_postagens (titulos, texto) VALUES (?, ?);
+		if(temaRepository.existsById(postagem.getTema().getId())) {
+			return ResponseEntity.status(HttpStatus.CREATED)
+					.body(postagemRepository.save(postagem)); 
+					// INSERT INTO tb_postagens (titulos, texto) VALUES (?, ?);
+		}
+		throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tema não existe", null);
 	}
 	
 	@PutMapping
 	public ResponseEntity<Postagem> update(@Valid @RequestBody Postagem postagem) {
-		return postagemRepository.findById(postagem.getId())
-				.map(resposta -> ResponseEntity.ok(postagemRepository.save(postagem)))
-				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build()); // UPDATE tb_postagens SET titulo = ?,texto = ? WHERE id = ?;
+		if(postagemRepository.existsById(postagem.getId())) {
+			if(temaRepository.existsById(postagem.getTema().getId())) {
+				return ResponseEntity.status(HttpStatus.OK).body(postagemRepository.save(postagem));
+			}
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Tema não existe", null);
+		}
+		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
 	@DeleteMapping("/{id}")
