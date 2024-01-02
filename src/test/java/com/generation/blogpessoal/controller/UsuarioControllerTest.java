@@ -78,16 +78,13 @@ public class UsuarioControllerTest {
 	
 	@Test
 	@DisplayName("Deve Atualizar o Usuário 😒")	
-	public void deveAtualizarUmUsuario() {
-		
+	public void deveAtualizarUmUsuario() {	
 		Optional<Usuario >usuarioCadastrado =  usuarioService.cadastrarUsuario(new Usuario(0L,
 				"Kendal", "kendal@email.com.br", "12345678", ""));
-
 		/*Corpo da Requisição*/
 		HttpEntity<Usuario> corpoRequisicao = new HttpEntity <Usuario>(new Usuario(usuarioCadastrado.get().getId(),
 				"Kendal", "kendal@email.com.br", "12345678", "")); 
-		
-		
+	
 		/*Requisição HTTP*/
 		ResponseEntity<Usuario> corpoResposta = testRestTemplate
 				.withBasicAuth("root@root.com", "rootroot")
@@ -100,11 +97,9 @@ public class UsuarioControllerTest {
 	
 	@Test
 	@DisplayName("Deve Listar todos os Usuários 😎")	
-	public void deveListarTodosUsuarios() {
-		
+	public void deveListarTodosUsuarios() {		
 		usuarioService.cadastrarUsuario(new Usuario(0L,
-				"Vitor", "vitor@email.com.br", "12345678", ""));
-		
+				"Vitor", "vitor@email.com.br", "12345678", ""));	
 		usuarioService.cadastrarUsuario(new Usuario(0L,
 				"Samara", "samara@email.com.br", "12345678", ""));		
 		
@@ -112,7 +107,6 @@ public class UsuarioControllerTest {
 		ResponseEntity<String> corpoResposta = testRestTemplate
 				.withBasicAuth("root@root.com", "rootroot")
 				.exchange("/usuarios",HttpMethod.GET, null,String.class);
-		
 		/*Verificar o HTTP Status Code*/
 		assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
 	}
@@ -121,32 +115,25 @@ public class UsuarioControllerTest {
 	@Test
     @DisplayName("Deve Autenticar Usuário")
     public void deveAutenticarUsuario() {
-        
         UsuarioLogin usuarioLogin = new UsuarioLogin();
         usuarioLogin.setUsuario("root@root.com");
         usuarioLogin.setSenha("rootroot");
-
-        // Corpo da requisição
-        HttpEntity<UsuarioLogin> corpoRequisicao = new HttpEntity<>(usuarioLogin);
-     
-        // Requisição HTTP
-        ResponseEntity<String> resposta = testRestTemplate
-                .postForEntity("/usuarios/logar", corpoRequisicao, String.class);
-
-        assertEquals(HttpStatus.OK, resposta.getStatusCode());
+        /*Corpo da requisição*/
+        HttpEntity<UsuarioLogin> corpoRequisicao = new HttpEntity<UsuarioLogin>(usuarioLogin);
+        /*Requisição HTTP*/
+        ResponseEntity<UsuarioLogin> corpoResposta = testRestTemplate
+                .exchange("/usuarios/logar", HttpMethod.POST, corpoRequisicao, UsuarioLogin.class);
+        assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
     }
     
     @Test
     @DisplayName("Deve Buscar Usuário Por ID")
     public void deveBuscarUsuarioId() {
-
-        usuarioService.cadastrarUsuario(new Usuario(0L, "Gabriel Sponda", "sponda@email.com.br", "12345678", ""));
-        
+        usuarioService.cadastrarUsuario(new Usuario(0L, "Clariosvaldo", "clariosvaldo@email.com.br", "12345678", "")); 
         // Requisição HTTP
         ResponseEntity<String> corpoResposta = testRestTemplate
         		.withBasicAuth("root@root.com", "rootroot")
-        		.exchange("/usuarios/1", HttpMethod.GET, null, String.class);
-        
+        		.exchange("/usuarios/1", HttpMethod.GET, null, String.class); 
         assertEquals(HttpStatus.OK, corpoResposta.getStatusCode());
     }
 }
