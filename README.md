@@ -1,4 +1,3 @@
-
 <h1 align="center">Projeto - Blog Pessoal</h1>
 
 
@@ -62,64 +61,31 @@
 <p align="left">A API utiliza o formato JSON para manipulação dos dados.</p>
 
 <br>
+
 <p align="left">Exemplo:<br> Para cadastrar um Tema, procure pelo método que tenha a assinatura "POST/tema", ao expandir, clique em “Try It Out”.</p>
 
 <br>
 <br>
 
 <p align="left"></p>
-
-
 <p align="left"></p>
-
 <p align="left"></p>
-
-
 <p align="left"></p>
-
 
 <img align="left" height="230" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/CadastroTema2.png?updatedAt=1704560006812"  />
-
-###
-
 <p align="left">insira no corpo da requisição, entre as aspas, os dados que deseja persistir.</p>
-
-###
-
 <p align="left">ID: Devido a anotação @GeneratedValue não funcionar no Swagger, se faz necessário informar o número do ID.</p>
-
-###
-
 <p align="left">Descrição: Informe uma descrição até 255 caracteres.</p>
-
-###
-
 <p align="left">Por fim, após a inserção das informações, clique no botão "Execute"</p>
-
-###
-
+<p align="left"></p>
 <p align="left"></p>
 
-###
-
-<p align="left"></p>
-
-###
 
 <p align="center">Você pode consultar o Tema cadastrado, procurando pelo método "GET/tema/{id}", e informar o ID do tema cadastrado.</p>
-
-###
-
 <div align="center">
   <img height="200" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/LogTema.png?updatedAt=1704573077537"  />
 </div>
 
-###
-
 <h2 align="left">Front-End</h2>
-
-###
-
 <p align="left">Em Construção...</p>
 
-###
