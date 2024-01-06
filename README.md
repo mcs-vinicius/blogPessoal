@@ -51,8 +51,8 @@
 <p align="left">Você pode acessar a aplicação por meio deste link - <a href="https://blogpessoal-neh7.onrender.com">BlogPessoal</a>. <br><br>Devido a segurança da aplicação, utilize o seguinte usuário: <br>Usuario: teste@teste.com <br>Senha: teste123</p>
 
 
-<p align="left">Obs: O carregamento da aplicação em seu primeiro acesso pode levar alguns minutos devido a utilização da hospedagem gratuita do render, após alguns minutos inativo o mesmo "adormece" a aplicação.</p>
-
+<p align="left">Obs: O carregamento da aplicação em seu primeiro acesso pode levar alguns minutos devido a utilização da hospedagem gratuita do render, após alguns minutos inativo o mesmo "adormece" fazendo com que a aplicação fique suspensa.</p>
+<br>
 
 <h3 align="left">Cadastro/Utilização</h3>
 
