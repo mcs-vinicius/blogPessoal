@@ -42,31 +42,27 @@
 
 <br clear="both">
 
-<h3 align="left">Teste do EndPoint</h3>
+<h4 align="left">Teste do EndPoint</h4>
 
 
 <img align="left" height="200" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/LoginBlog.png?updatedAt=1704557085426"  />
 
 
-<p align="left">Você pode acessar a aplicação por meio deste link - <a href="https://blogpessoal-neh7.onrender.com">BlogPessoal</a>. <br><br>Devido a segurança da aplicação, utilize o seguinte usuário: <br>Usuario: teste@teste.com <br>Senha: teste123</p>
+<p align="left">Você pode acessar a aplicação por meio deste link - <a href="https://blogpessoal-neh7.onrender.com">BlogPessoal</a>. <br>Devido a segurança da aplicação, utilize o seguinte usuário: <br>Usuario: teste@teste.com <br>Senha: teste123</p>
 
 
 <p align="left">Obs: O carregamento da aplicação em seu primeiro acesso pode levar alguns minutos devido a utilização da hospedagem gratuita do render, após alguns minutos inativo o mesmo "adormece" fazendo com que a aplicação fique suspensa.</p>
-<br>
 
-<h3 align="left">Cadastro/Utilização</h3>
+<h4 align="left">Cadastro/Utilização</h4>
 
 
-<img align="right" height="250" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/CadastroTema1.png?updatedAt=1704559429791"  />
+<img align="right" height="230" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/CadastroTema1.png?updatedAt=1704559429791"  />
 
 
 <p align="left">A API utiliza o formato JSON para manipulação dos dados.</p>
 
-
-<p align="left">Exemplo:</p>
-
-
-<p align="left">Para cadastrar um Tema, procure pelo método que tenha a assinatura "POST/tema", ao expandir, clique em “Try It Out”.</p>
+<br>
+<p align="left">Exemplo:<br> Para cadastrar um Tema, procure pelo método que tenha a assinatura "POST/tema", ao expandir, clique em “Try It Out”.</p>
 
 <br>
 <br>
@@ -82,7 +78,7 @@
 <p align="left"></p>
 
 
-<img align="left" height="250" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/CadastroTema2.png?updatedAt=1704560006812"  />
+<img align="left" height="230" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/CadastroTema2.png?updatedAt=1704560006812"  />
 
 ###
 
@@ -115,7 +111,7 @@
 ###
 
 <div align="center">
-  <img height="200" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/LogTema.png?updatedAt=1704562732447"  />
+  <img height="200" src="https://ik.imagekit.io/wzl99vhez/BlogPessoal/LogTema.png?updatedAt=1704573077537"  />
 </div>
 
 ###
