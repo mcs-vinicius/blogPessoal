@@ -22,7 +22,13 @@
 </div>
 
 
-<p align="left">O Back-End da aplicação foi construído utilizando conceitos de orientação a objeto e boas práticas para o desenvolvimento de uma API Rest utilizando o Framework Spring. O projeto possui um foco acadêmico, porém abordamos assuntos mais avançados visando a segurança e a integridade da aplicação. <br><br>-Segurança:  Para a implementação da segurança foi utilizada as boas práticas do Spring Security, esse Framework oferece uma variedade de benefícios para o desenvolvimento seguro de uma aplicação web, como: permitir integração com diferentes mecanismos de autenticação, autenticação de token, controle de acesso, Proteção contra ataques de segurança, Gestão de sessões entre outros. <br><br>-Dependências: Spring Doc, PostgreSQL, Spring Boot Devtools, MySQL Driver, Spring Security, Spring Data JPA, Spring Web, Validation. <br><br>-Banco de Dados: Para persistência de dados no ambiente de Desenvolvimento foi utilizado o SGBD MySQL, e para persistência de dados em Produção foi utilizado o PostgreSQL. <br><br>-Documentação: Utilizamos o Swagger UI que oferece uma abordagem padronizada para o desenvolvimento e documentação de APIs Rest e RESTful, simplificando o processo de criação, consumo e manutenção dessas interfaces.</p>
+<p align="left">O Back-End da aplicação foi construído utilizando conceitos de orientação a objeto e boas práticas para o desenvolvimento de uma API Rest utilizando o Framework Spring. O projeto possui um foco acadêmico, porém abordamos assuntos mais avançados visando a segurança e a integridade da aplicação.</p>
+        <ul>
+          <li>Segurança:  Para a implementação da segurança foi utilizada as boas práticas do Spring Security, esse Framework oferece uma variedade de benefícios para o desenvolvimento seguro de uma aplicação web, como: permitir integração com diferentes mecanismos de autenticação, autenticação de token, controle de acesso, Proteção contra ataques de segurança, Gestão de sessões entre outros.</li>
+          <li>Dependências: Spring Doc, PostgreSQL, Spring Boot Devtools, MySQL Driver, Spring Security, Spring Data JPA, Spring Web, Validation.</li>
+          <li>Banco de Dados: Para persistência de dados no ambiente de Desenvolvimento foi utilizado o SGBD MySQL, e para persistência de dados em Produção foi utilizado o PostgreSQL.</li>
+          <li>Documentação: Utilizamos o Swagger UI que oferece uma abordagem padronizada para o desenvolvimento e documentação de APIs Rest e RESTful, simplificando o processo de criação, consumo e manutenção dessas interfaces.</li>
+        </ul>
 
 
 <div align="center">
