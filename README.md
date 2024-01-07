@@ -1,7 +1,7 @@
 <h1 align="center">Projeto - Blog Pessoal</h1>
 
 
-<h4 align="left">Este projeto visa a elaboração de uma aplicação para um Blog Pessoal, partindo do Back-End até a fase de implementação (Deploy) do Front-End, mediante a utilização das principais tecnologias presentes no mercado.</h4>
+<h4 align="left">Este projeto visa a elaboração de uma aplicação para um Blog Pessoal, partindo do Back-End até a fase de implementação do Front-End, mediante a utilização das principais tecnologias presentes no mercado.</h4>
 
 <h2 align="left">Back-End</h2>
 
